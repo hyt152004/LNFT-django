@@ -11,6 +11,7 @@
   <thead class="table-dark">
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">Title</th>
       <th scope="col">Created At</th>
     </tr>
   </thead>
@@ -21,10 +22,17 @@
     {% for record in records %}
     <tr>
       <td>
-        <a href="{% url 'record' record.id %}">{{ record.first_name }}
-          {{ record.last_name }}
+        {{ record.first_name }}
+        {{ record.last_name }}
+
+      </td>
+
+      <td>
+        <a href="{% url 'record' record.id %}">
+          {{ record.title }}
         </a>
       </td>
+
       <td>{{ record.created_at }}</td>
 
     </tr>
