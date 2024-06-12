@@ -1,0 +1,8 @@
+/* styles.css */
+body {
+  background-image: url('assets/lnft-background.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+

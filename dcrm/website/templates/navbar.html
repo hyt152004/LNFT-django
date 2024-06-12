@@ -1,26 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<style>
+  .custom-navbar {
+    background-color: #b1bc94;
+  }
+
+  .logo-font {
+    font-size: 25px;
+    color: #715b49;
+    font-weight: 600;
+  }
+
+  .fonts {
+    color: #715b49;
+    font-weight: 900;
+    font-size: medium;
+  }
+
+  .fonts:hover,
+  .logo-font:hover {
+    color: #c1946f;
+  }
+
+
+
+  .actions {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home'%}">LNFT</a>
+    <a class="navbar-brand logo-font" href="{% url 'home'%}">LNFT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse actions" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         {% if user.is_authenticated %}
+
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_record' %}">Add Record</a>
+          <a class="nav-link fonts" href="{% url 'add_record' %}">Add Record</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          <a class="nav-link fonts" href="{% url 'logout' %}">Logout</a>
         </li>
 
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Login</a>
+          <a class="nav-link fonts" href="{% url 'home' %}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'register' %}">Register</a>
+          <a class="nav-link fonts" href="{% url 'register' %}">Register</a>
         </li>
 
         {% endif %}

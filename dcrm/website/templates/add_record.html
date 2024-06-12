@@ -2,8 +2,19 @@
 
 {% block content %}
 
+<style>
+  .add-btn {
+    background-color: #8cb648;
+    color: white;
+  }
+
+  .add-btn:hover {
+    background-color: #6cac06;
+  }
+</style>
+
 <div class="col-md-6 offset-md-3">
-  <h1>Add Records</h1>
+  <h1>Write in Your Journal</h1>
   <br />
 
   <form action="{%url 'add_record'%}" method="POST">
@@ -12,7 +23,7 @@
     {{ form.as_p }}
 
     <br />
-    <button type="submit" class="btn btn-secondary">Add Record</button>
+    <button type="submit" class="btn btn-secondary add-btn">Add Record</button>
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
   </form>
 </div>

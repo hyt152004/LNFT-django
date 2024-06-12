@@ -36,10 +36,11 @@ class SignUpForm(UserCreationForm):
 # Create Add Record Form
     
 class AddRecordForm(forms.ModelForm):
-  first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class": "form-control"}), label="")
-  last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Last Name", "class": "form-control"}), label="")
   title = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Title", "class": "form-control"}), label="")
-  day_note = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Write About Your Day!", "class": "form-control"}), label="")
+  first_prompt = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "What went well today?", "class": "form-control"}), label="")
+  second_prompt = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "What could have gone better?", "class": "form-control"}), label="")
+  third_prompt = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "What can I do differently tomorrow? ", "class": "form-control"}), label="")
+
 
   class Meta:
     model = Record

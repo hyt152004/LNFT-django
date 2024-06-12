@@ -2,17 +2,44 @@
 
 {% block content %}
 
+<style>
+  .custom-table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .custom-table thead th {
+    background-color: #8cb648;
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: gray;
+  }
+
+  .login-btn {
+    background-color: #8cb648;
+    color: white;
+  }
+
+  .login-btn:hover {
+    background-color: #6cac06;
+  }
+</style>
 
 {% if user.is_authenticated %}
 
-
-
-<table class="table table-striped table-hover table-bordered ">
-  <thead class="table-dark">
+<table class="table table-striped table-hover table-bordered custom-table">
+  <thead class="custom-table">
     <tr>
-      <th scope="col">Name</th>
       <th scope="col">Title</th>
-      <th scope="col">Created At</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
@@ -22,19 +49,13 @@
     {% for record in records %}
     <tr>
       <td>
-        {{ record.first_name }}
-        {{ record.last_name }}
-
-      </td>
-
-      <td>
         <a href="{% url 'record' record.id %}">
           {{ record.title }}
         </a>
       </td>
-
-      <td>{{ record.created_at }}</td>
-
+      <td>
+        {{ record.created_at }}
+      </td>
     </tr>
     {% endfor %}
 
@@ -43,33 +64,26 @@
   </tbody>
 </table>
 
-
-
-
 {% else %}
 
 <div class="col-md-6 offset-md-3">
-
   <h1>Login</h1>
   <br />
   <!-- make a POST request and return home when submitted -->
-  <form action="{%url 'home'%}" method="POST">
-    {%csrf_token%}
-    <form>
-      <div class="mb-3">
-        <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder="Username"
-          required>
-      </div>
-      <div class="mb-3">
-        <input type="password" class="form-control" name="password" placeholder="Password" required>
-      </div>
-      <br />
-      <button type="submit" class="btn btn-secondary">Login</button>
-    </form>
+  <form action="{% url 'home'%}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder="Username"
+        required>
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-secondary login-btn">Login</button>
   </form>
 </div>
 
 {% endif %}
-
 
 {% endblock %}

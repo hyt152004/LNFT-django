@@ -2,16 +2,26 @@
 
 {% block content %}
 
+<style>
+  .update-btn {
+    background-color: #8cb648;
+    color: white;
+  }
+
+  .update-btn:hover {
+    background-color: #6cac06;
+  }
+</style>
 
 <div class="card">
   <div class="card-header">
-    {{ customer_record.first_name }}
-    {{ customer_record.last_name }}
+    {{ customer_record.title }}
   </div>
   <div class="card-body">
     <p class="card-text">
-      <strong>{{ customer_record.title }}</strong><br />
-      {{ customer_record.day_note }}<br />
+      {{ customer_record.first_prompt }}<br /><br />
+      {{ customer_record.second_prompt }}<br /><br />
+      {{ customer_record.third_prompt }}<br /><br />
     </p>
   </div>
 </div>
@@ -21,6 +31,6 @@
 
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
-<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary update-btn">Update Record</a>
 
 {% endblock %}
