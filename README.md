@@ -8,6 +8,10 @@
 
 LNFT can be your solution! Jot down your thoughts and reflect how your day went. 
 
-"Without reflection, we go blindly on our way, creating more unintended consequences, and failing to achieve anything useful." - Margaret J. Wheatley -
+"Without reflection, we go blindly on our way, creating more unintended consequences, and failing to achieve anything useful." 
 
-<img width="9040" alt="Screenshot 2024-01-23 at 6 32 00 PM" src="https://github.com/hyt152004/FridgeyMERN/assets/111398735/510abd50-6a4c-4e9e-8b93-214361ed3585">
+\- Margaret J. Wheatley \-
+
+
+(Don't be this guy)
+<img width="3040" alt="Screenshot 2024-01-23 at 6 32 00 PM" src="https://github.com/hyt152004/LNFT-django/blob/main/Jot%20Down%20Something.gif">
